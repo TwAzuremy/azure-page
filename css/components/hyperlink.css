@@ -1,0 +1,28 @@
+.hyperlink {
+    position: relative;
+    text-decoration: none;
+    font-size: 0.75rem;
+    line-height: 1.75rem;
+    color: color-mix(in oklab, var(--theme-ui-colors-text), var(--theme-ui-colors-cards) 70%);
+    transition: color var(--animation-duration-muted) var(--animation-cubic-bezier-muted);
+}
+
+.hyperlink::after {
+    position: absolute;
+    content: '';
+    bottom: 2px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--theme-ui-colors-primary);
+    scale: 0;
+    transition: scale var(--animation-duration-muted) var(--animation-cubic-bezier-muted);
+}
+
+.hyperlink:hover {
+    color: var(--theme-ui-colors-primary);
+}
+
+.hyperlink:hover::after {
+    scale: 1;
+}
