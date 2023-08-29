@@ -1,0 +1,36 @@
+.switch {
+    --switch-height: 28px;
+    --switch-width: 48px;
+    --switch-padding: 4px;
+
+    position: relative;
+    height: var(--switch-height);
+    width: var(--switch-width);
+    background-color: var(--theme-ui-colors-useless);
+    border-radius: calc(var(--switch-height) / 2);
+    transition: background-color var(--animation-duration-muted) var(--animation-cubic-bezier-muted);
+}
+
+.switch input[type=checkbox][name=switch__checkbox] {
+    display: none;
+}
+
+.switch:has(input[type=checkbox][name=switch__checkbox]:checked) {
+    background-color: var(--theme-ui-colors-primary);
+}
+
+.switch .switch__dot {
+    position: absolute;
+    border-radius: 50%;
+    top: calc(var(--switch-padding));
+    left: calc(var(--switch-padding));
+    height: calc(var(--switch-height) - var(--switch-padding) * 2);
+    width: calc(var(--switch-height) - var(--switch-padding) * 2);
+    background-color: var(--theme-ui-colors-cards);
+    transition: left var(--animation-duration-muted) var(--animation-cubic-bezier-muted),
+    background-color var(--animation-duration-muted) var(--animation-cubic-bezier-muted);
+}
+
+.switch input[type=checkbox][name=switch__checkbox]:checked + .switch__dot {
+    left: calc(var(--switch-width) - var(--switch-height) + var(--switch-padding));
+}

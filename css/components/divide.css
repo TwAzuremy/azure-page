@@ -1,0 +1,39 @@
+.divide {
+    --divide-gap: 4px;
+    --divide-thickness: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.divide div {
+    border-radius: calc(var(--divide-thickness) / 2);
+}
+
+.divide[data-direction=row] {
+    width: 100%;
+    height: var(--divide-thickness);
+    margin: var(--divide-gap) 0;
+}
+
+.divide[data-direction=row] div {
+    width: 100%;
+    height: var(--divide-thickness);
+    background-color: color-mix(in oklab, var(--theme-ui-colors-text), var(--theme-ui-colors-cards) 85%);
+}
+
+.divide[data-direction=col] {
+    width: var(--divide-thickness);
+    height: 100%;
+    margin: 0 var(--divide-gap);
+}
+
+.divide[data-direction=col] div {
+    width: var(--divide-thickness);
+    height: 100%;
+    background-color: color-mix(in oklab, var(--theme-ui-colors-text), var(--theme-ui-colors-cards) 85%);
+}
+
+.divide.no-margin {
+    margin: 0;
+}

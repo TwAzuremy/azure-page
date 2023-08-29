@@ -1,0 +1,29 @@
+._blank {
+    flex: 1;
+}
+
+#app__header #app__icon {
+    --icon-size: 36px;
+
+    width: var(--icon-size);
+    height: var(--icon-size);
+}
+
+#app__icon img {
+    width: var(--icon-size);
+    height: var(--icon-size);
+    user-select: none;
+    pointer-events: none;
+}
+
+body[data-mode=light] #app__button-mode #icon-sun {
+    display: none;
+}
+
+body[data-mode=dark] #app__button-mode #icon-moon {
+    display: none;
+}
+
+#app__header #app__settings {
+    position: relative;
+}

@@ -1,0 +1,30 @@
+input[type=text] {
+    appearance: none;
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    color: var(--theme-ui-colors-text);
+    transition: color var(--animation-duration-muted) var(--animation-cubic-bezier-muted);
+}
+
+input + .input__clear {
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity var(--animation-duration-muted) var(--animation-cubic-bezier-muted),
+    color var(--animation-duration-muted) var(--animation-cubic-bezier-muted);
+}
+
+input:placeholder-shown + .input__clear {
+    opacity: 0;
+    pointer-events: none;
+}
+
+input#image__wallpaper {
+    height: 36px;
+    padding: 0 12px;
+    border-radius: 6px;
+    box-shadow: var(--theme-ui-shadow-cards);
+    background-color: var(--theme-ui-colors-cards);
+}

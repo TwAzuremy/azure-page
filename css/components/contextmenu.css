@@ -1,0 +1,33 @@
+#app__contextmenu {
+    --contextmenu-padding: 8px;
+
+    display: flex;
+    position: absolute;
+    background-color: var(--theme-ui-colors-cards);
+    box-shadow: var(--theme-ui-shadow-cards);
+    border-radius: 6px;
+    overflow: hidden;
+    width: 0;
+    height: 0;
+    z-index: 98;
+    transition: width var(--animation-duration-muted) var(--animation-cubic-bezier-muted),
+    height var(--animation-duration-muted) var(--animation-cubic-bezier-muted),
+    background-color var(--animation-duration-muted) var(--animation-cubic-bezier-muted);
+}
+
+#app[data-blurExpand=true] #app__contextmenu {
+    background-color: var(--theme-ui-colors-cards-blur);
+    backdrop-filter: blur(var(--theme-ui-blur));
+}
+
+#app__contextmenu .contextmenu__container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: var(--contextmenu-padding);
+}
+
+.contextmenu__container .contextmenu__operation__group {
+    display: flex;
+    align-items: center;
+}

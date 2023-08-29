@@ -1,0 +1,23 @@
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--theme-ui-colors-overlay);
+    backdrop-filter: blur(var(--theme-ui-blur));
+    z-index: 97;
+    opacity: 0;
+    pointer-events: none;
+    transition: background-color var(--animation-duration-muted) var(--animation-cubic-bezier-muted),
+    opacity var(--animation-duration-muted) var(--animation-cubic-bezier-muted);
+}
+
+.overlay.status-open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.overlay.full-screen {
+    position: fixed;
+}

@@ -1,0 +1,103 @@
+.radio__group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.radio__group[data-direction=col] {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.radio__container {
+    --radio-size: 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--radio-size);
+    height: var(--radio-size);
+    border-radius: 50%;
+    background-color: color-mix(in oklab, var(--radio-color, #4091ff), var(--theme-ui-colors-cards) 60%);
+    transition: background-color var(--animation-duration-muted) var(--animation-cubic-bezier-muted);
+}
+
+.radio__container.style-engine {
+    --radio-size: 20px;
+
+    width: 100%;
+    justify-content: flex-start;
+    gap: 8px;
+    height: auto;
+    padding: 12px;
+    color: color-mix(in oklab, var(--theme-ui-colors-text), var(--theme-ui-colors-cards) 70%);
+    font-size: 0.875rem;
+}
+
+.radio__container.style-engine .engine__name {
+    flex: 1;
+    transition: color var(--animation-duration-muted) var(--animation-cubic-bezier-muted);
+}
+
+.radio__container.style-engine .engine__website {
+    font-size: 0.75rem;
+    transition: color var(--animation-duration-muted) var(--animation-cubic-bezier-muted);
+}
+
+.radio__container input[type=radio] {
+    display: none;
+}
+
+.radio__container .radio__dot {
+    width: var(--radio-size);
+    height: var(--radio-size);
+    border-radius: 50%;
+    background-color: var(--radio-color, #4091ff);
+    scale: 1;
+    transition: scale var(--animation-duration-muted) var(--animation-cubic-bezier-muted);
+}
+
+.radio__container.style-engine .radio__dot {
+    --svg-size: calc(var(--radio-size) - 6px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--theme-ui-colors-primary);
+    background-color: var(--theme-ui-colors-useless);
+    transition: background-color var(--animation-duration-muted) var(--animation-cubic-bezier-muted);
+}
+
+.radio__container.style-engine .radio__dot svg {
+    width: var(--svg-size);
+    height: var(--svg-size);
+    scale: 0;
+    transition: scale var(--animation-duration-muted) var(--animation-cubic-bezier-muted);
+}
+
+.radio__container input[type=radio]:checked + .radio__dot {
+    scale: 0.75;
+}
+
+.radio__container.style-engine input[type=radio]:checked + .radio__dot {
+    scale: 1;
+    background-color: color-mix(in oklab, var(--theme-ui-colors-primary), var(--theme-ui-colors-cards) 80%);
+}
+
+.radio__container.style-engine input[type=radio]:checked + .radio__dot svg {
+    scale: 1;
+}
+
+.radio__container.style-engine input[type=radio]:checked ~ .engine__name,
+.radio__container.style-engine input[type=radio]:checked ~ .engine__website {
+    color: var(--theme-ui-colors-primary);
+}
+
+.radio__container .button.default__engine__delete {
+    width: 24px;
+    min-height: 24px;
+}
+
+.radio__container .button.default__engine__delete svg {
+    --icon-size: 16px;
+}
