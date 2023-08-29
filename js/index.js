@@ -473,7 +473,7 @@ class Settings {
 
         Object.keys(this.#routine).forEach(key => {
             const storeKey = Util.convertToCustomSeparator(key, ".");
-            const value = eval(`store.value.${storeKey}`);
+            const value = Util.getStoreValue(store.value, storeKey);
             const el = this.#routine[key];
 
             if (el.constructor === NodeList) {
@@ -535,7 +535,7 @@ class Settings {
     }
 
     delEngine(name) {
-        const {[name]: delKey, ...newObj} = store.value.website.custom;
+        const { [name]: delKey, ...newObj } = store.value.website.custom;
         store.value.website.custom = newObj;
         toast.createToast(null, "success", `搜索引擎: ${name} <h3>已删除</h3>.`);
     }
@@ -556,9 +556,9 @@ class Settings {
         Object.keys(this.#routine).forEach(key => {
             if (key !== "wallpaperToggle") {
                 const storeKey = Util.convertToCustomSeparator(key, ".");
-                const value = eval(`defaultLocalStorageValue.${storeKey}`);
+                const value = Util.getStoreValue(defaultLocalStorageValue, storeKey);
 
-                eval(`store.value.${storeKey} = ${value}`);
+                Util.setStoreValue(store.value, storeKey, value)
             }
         });
 
@@ -571,11 +571,7 @@ class Settings {
     }
 
     setStoreValue(key, value) {
-        if (typeof value === "string") {
-            eval(`store.value.${key} = '${value}'`);
-        } else {
-            eval(`store.value.${key} = ${value}`);
-        }
+        Util.setStoreValue(store.value, key, value)
     }
 
     static toggleExpandContainer(elExpand) {
@@ -727,6 +723,29 @@ class Util {
                     // 粘贴失败
                 });
         }
+    }
+
+    static setStoreValue(proxy, location, value) {
+        const locationArr = location.split(".");
+        let currentObj = proxy;
+        for (let i = 0; i < locationArr.length - 1; i++) {
+            currentObj = currentObj[locationArr[i]];
+        }
+        const lastKey = locationArr[locationArr.length - 1];
+        currentObj[lastKey] = value;
+    }
+
+    static getStoreValue(proxy, location) {
+        const locationArr = location.split(".");
+        let currentObj = proxy;
+        for (let key of locationArr) {
+            if (currentObj.hasOwnProperty(key)) {
+                currentObj = currentObj[key];
+            } else {
+                return void 0;
+            }
+        }
+        return currentObj;
     }
 }
 
