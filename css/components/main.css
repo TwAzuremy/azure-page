@@ -68,7 +68,7 @@
 #app__title svg {
     color: var(--theme-ui-colors-primary);
     transition: color var(--animation-duration-muted) var(--animation-cubic-bezier-muted);
-    animation: fill-animation var(--animation-duration-slow) ease-in-out forwards calc(var(--animation-delay-per-word) * 8 + var(--animation-duration-large) - 0.4s);
+    animation: fill-animation var(--animation-duration-slow) ease-in-out forwards calc(var(--animation-delay-per-word) * 4 + var(--animation-duration-large) - 1s);
 }
 
 #app__title svg path {
