@@ -2,7 +2,7 @@
     margin: 0 auto;
     font-size: 3rem;
     transition: height var(--animation-duration-muted) var(--animation-cubic-bezier-muted),
-    font-size var(--animation-duration-muted) var(--animation-cubic-bezier-muted);
+        font-size var(--animation-duration-muted) var(--animation-cubic-bezier-muted);
 }
 
 #app__time #app__clock {
@@ -79,57 +79,33 @@
 }
 
 #app__title svg path:nth-child(1) {
-    stroke-dasharray: 233;
-    stroke-dashoffset: 233;
+    stroke-dasharray: 669;
+    stroke-dashoffset: 669;
     animation-delay: calc(var(--animation-delay-per-word) * 0);
 }
 
 #app__title svg path:nth-child(2) {
-    stroke-dasharray: 190;
-    stroke-dashoffset: 190;
+    stroke-dasharray: 556;
+    stroke-dashoffset: 556;
     animation-delay: calc(var(--animation-delay-per-word) * 1);
 }
 
 #app__title svg path:nth-child(3) {
-    stroke-dasharray: 178;
-    stroke-dashoffset: 178;
+    stroke-dasharray: 503;
+    stroke-dashoffset: 503;
     animation-delay: calc(var(--animation-delay-per-word) * 2);
 }
 
 #app__title svg path:nth-child(4) {
-    stroke-dasharray: 113;
-    stroke-dashoffset: 113;
+    stroke-dasharray: 495;
+    stroke-dashoffset: 495;
     animation-delay: calc(var(--animation-delay-per-word) * 3);
 }
 
 #app__title svg path:nth-child(5) {
-    stroke-dasharray: 175;
-    stroke-dashoffset: 175;
+    stroke-dasharray: 421;
+    stroke-dashoffset: 421;
     animation-delay: calc(var(--animation-delay-per-word) * 4);
-}
-
-#app__title svg path:nth-child(6) {
-    stroke-dasharray: 219;
-    stroke-dashoffset: 219;
-    animation-delay: calc(var(--animation-delay-per-word) * 5);
-}
-
-#app__title svg path:nth-child(7) {
-    stroke-dasharray: 165;
-    stroke-dashoffset: 165;
-    animation-delay: calc(var(--animation-delay-per-word) * 6);
-}
-
-#app__title svg path:nth-child(8) {
-    stroke-dasharray: 248;
-    stroke-dashoffset: 248;
-    animation-delay: calc(var(--animation-delay-per-word) * 7);
-}
-
-#app__title svg path:nth-child(9) {
-    stroke-dasharray: 175;
-    stroke-dashoffset: 175;
-    animation-delay: calc(var(--animation-delay-per-word) * 8);
 }
 
 @keyframes line-animation {
