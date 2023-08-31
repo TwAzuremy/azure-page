@@ -1,0 +1,20 @@
+{
+    "manifest_version": 3,
+    "name": "Azure Home",
+    "version": "1.1.2",
+    "description": "将浏览器的起始页设定为 Azure Home",
+    "chrome_url_overrides": {
+        "newtab": "index.html"
+    },
+    "permissions": [
+        "webRequest",
+        "tabs",
+        "storage"
+    ],
+    "icons": {
+        "16": "img/icon/mdpi.png",
+        "32": "img/icon/hdpi.png",
+        "48": "img/icon/xhdpi.png",
+        "128": "img/icon/xxhdpi.png"
+    }
+}
