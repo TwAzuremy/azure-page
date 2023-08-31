@@ -42,7 +42,7 @@
 
     /* theme ui shadow */
     --theme-ui-shadow-cards: rgba(0, 0, 0, 0.1) 0 1px 3px 0,
-    rgba(0, 0, 0, 0.06) 0 1px 2px 0;
+        rgba(0, 0, 0, 0.06) 0 1px 2px 0;
 
     /* theme-ui-blur */
     --theme-ui-blur: 8px;
@@ -50,8 +50,8 @@
     /* theme animation */
     --animation-duration-muted: 0.2s;
     --animation-duration-slow: 0.5s;
-    --animation-duration-large: 1s;
-    --animation-delay-per-word: 0.15s;
+    --animation-duration-large: 2s;
+    --animation-delay-per-word: 0.4s;
     --animation-cubic-bezier-muted: cubic-bezier(0.65, 0.05, 0.36, 1);
     --animation-cubic-bezier-ease: cubic-bezier(0.25, 0, 0.6, 1);
 }
@@ -69,7 +69,7 @@ body {
     color: var(--theme-ui-colors-text);
     transition: background-color var(--animation-duration-muted) var(--animation-cubic-bezier-muted);
     font-family: 'Resource-Han-Rounded', system-ui, PingFang SC, PingFangSC-Regular, Microsoft YaHei, Hiragino Sans GB,
-    Heiti SC, WenQuanYi Micro Hei, sans-serif, Apple Braille;
+        Heiti SC, WenQuanYi Micro Hei, sans-serif, Apple Braille;
 }
 
 body[data-mode=dark] {
